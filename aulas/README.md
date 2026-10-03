@@ -1,17 +1,13 @@
-# 📚 Aulas
+# Aulas
 
-Nesta pasta ficam os conteúdos e práticas relacionados às aulas de CSS3.
+Conteúdos e fundamentos estudados em CSS.
 
-## Organização
-
-As atividades podem ser separadas por aula ou tema, mantendo uma estrutura simples e fácil de consultar.
-
-## Temas
+## Conteúdo
 
 - Seletores
 - Box Model
 - Cores e tipografia
-- Layout
+- Espaçamento
 - Formulários
-- Estados e pseudo-classes
-- Responsividade
+- Pseudo-classes
+- Organização de estilos
