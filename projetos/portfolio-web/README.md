@@ -1,22 +1,22 @@
-# Meu Portfólio — HTML e CSS
+# Meu Portfólio — CSS3
 
-Projeto prático desenvolvido durante os estudos de HTML5 e CSS3.
+Projeto prático desenvolvido durante os estudos de **CSS3**, utilizando uma estrutura HTML5 como base para aplicar os estilos.
 
-## Tecnologias
+## Tecnologia principal
 
-- HTML5
 - CSS3
 
 ## Conteúdo
 
+- Seletores CSS
+- Box Model
+- Cores e tipografia
+- Espaçamento
 - Menu de navegação
-- Banner de apresentação
-- Seção de projetos
 - Cards
-- Formulário
-- Validação de campos
-- Áudio e vídeo
-- Estilização e efeitos com CSS
+- Formulários
+- Pseudo-classe `:hover`
+- Organização dos estilos em arquivo separado
 
 ## Estrutura
 
