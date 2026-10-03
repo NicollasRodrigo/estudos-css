@@ -5,9 +5,17 @@ Repositório dedicado aos meus estudos de CSS, com conteúdos organizados para a
 ## Conteúdo
 
 - [Aulas](./aulas/) — conteúdos e fundamentos de CSS.
-- [Atividade 06 — Aplicando CSS3 no Projeto de Portfólio](./aulas/atividade-06/) — exercício de aplicação prática de CSS3.
 - [Exercícios](./exercicios/) — exercícios para prática.
 - [Projetos](./projetos/) — projetos desenvolvidos durante os estudos.
+
+## Projeto em destaque
+
+### Meu Portfólio — HTML e CSS
+
+Página de portfólio desenvolvida para praticar HTML5 e CSS3, incluindo navegação, seções, cards, formulário e recursos multimídia.
+
+- [Abrir projeto](./projetos/portfolio-web/)
+- [README do projeto](./projetos/portfolio-web/README.md)
 
 ---
 
