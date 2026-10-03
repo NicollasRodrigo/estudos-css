@@ -1,24 +1,24 @@
-# 🎨 Meu Portfólio — HTML e CSS
+# Meu Portfólio — HTML e CSS
 
-Página de portfólio desenvolvida durante os estudos de **HTML5 e CSS3**.
+Projeto prático desenvolvido durante os estudos de HTML5 e CSS3.
 
-## 🚀 Tecnologias
+## Tecnologias
 
-- 🟧 HTML5
-- 🎨 CSS3
+- HTML5
+- CSS3
 
-## ✨ Funcionalidades
+## Conteúdo
 
-- Menu de navegação por seções.
-- Área de apresentação do portfólio.
-- Cards para apresentação de projetos.
-- Formulário de contato.
-- Validação básica dos campos com HTML.
-- Campo para seleção de foto.
-- Suporte a áudio e vídeo.
-- Estilização com CSS3 e efeitos de `:hover`.
+- Menu de navegação
+- Banner de apresentação
+- Seção de projetos
+- Cards
+- Formulário
+- Validação de campos
+- Áudio e vídeo
+- Estilização e efeitos com CSS
 
-## 📁 Estrutura
+## Estrutura
 
 ```text
 portfolio-web/
@@ -28,31 +28,12 @@ portfolio-web/
 └── README.md
 ```
 
-## 📚 O que pratiquei
+## Como usar
 
-- Seletores por elemento, `id` e `class`.
-- Box Model.
-- Cores, tipografia e espaçamento.
-- Margens, preenchimento e bordas.
-- Menu e navegação.
-- Cards e organização de conteúdo.
-- Formulários e validações.
-- Pseudo-classe `:hover`.
-- Separação entre estrutura HTML e estilos CSS.
+Abra o arquivo `index.html` no navegador ou utilize o Live Server no Visual Studio Code.
 
-## ▶️ Como visualizar
+Os caminhos do áudio e do vídeo estão preparados no HTML para os arquivos locais correspondentes.
 
-Abra o arquivo `index.html` em um navegador ou utilize a extensão **Live Server** no Visual Studio Code.
+## Perfil
 
-## ⚠️ Arquivos multimídia
-
-O HTML está preparado para utilizar:
-
-- `audio/apresentacao.mp3`
-- `video/apresentacao.mp4`
-
-Esses arquivos não estavam presentes no material enviado para este repositório.
-
-## 👨‍💻 Autor
-
-[Nicollas Rodrigo](https://github.com/NicollasRodrigo)
+[GitHub de Nicollas Rodrigo](https://github.com/NicollasRodrigo)
