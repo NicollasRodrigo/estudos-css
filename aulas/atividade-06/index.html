@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="#banner">Início</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <header id="banner">
+    <h1>Meu Portfólio</h1>
+    <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+  </header>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+
+    <div class="card">
+      <h3>Projeto 1</h3>
+      <p>Projeto desenvolvido com HTML e CSS.</p>
+    </div>
+
+    <div class="card">
+      <h3>Projeto 2</h3>
+      <p>Projeto desenvolvido durante meus estudos.</p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+
+    <form>
+      <label for="nome">Nome:</label>
+      <input
+        id="nome"
+        name="nome"
+        type="text"
+        required
+        pattern="[A-Za-zÀ-ÿ\s]{5,50}"
+      >
+
+      <label for="email">E-mail:</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="Digite seu e-mail"
+      >
+
+      <label for="telefone"><i>Telefone:</i></label>
+      <input
+        id="telefone"
+        name="telefone"
+        type="tel"
+        required
+        pattern="[0-9\s()+-]{8,20}"
+      >
+
+      <label for="linkedin"><i>LinkedIn</i></label>
+      <input id="linkedin" name="linkedin" type="url" required placeholder="https://linkedin.com/in/...">
+
+      <label for="github"><i>GitHub</i></label>
+      <input id="github" name="github" type="url" required placeholder="https://github.com/...">
+
+      <label for="foto"><i>Minha Foto:</i></label>
+      <input id="foto" name="foto" type="file" accept="image/*">
+
+      <label><i>Áudio:</i></label>
+      <audio controls>
+        <source src="audio/apresentacao.mp3" type="audio/mpeg">
+        Seu navegador não conseguiu carregar o áudio.
+      </audio>
+
+      <label><i>Vídeo:</i></label>
+      <video width="300" controls>
+        <source src="video/apresentacao.mp4" type="video/mp4">
+        Seu navegador não conseguiu carregar o vídeo.
+      </video>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</body>
+</html>
