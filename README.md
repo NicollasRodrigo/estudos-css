@@ -6,7 +6,7 @@ Repositório dedicado aos meus estudos de CSS, com conteúdos organizados para a
 
 - [Aulas](./aulas/) — conteúdos e atividades de CSS.
 - [Exercícios](./exercicios/) — exercícios para prática.
-- [Projetos](./projetos/) — projetos completos desenvolvidos durante os estudos.
+- [Projetos](./projetos/) — projetos desenvolvidos durante os estudos.
 
 ---
 
