@@ -70,6 +70,7 @@ section {
   color: #2563EB;
 }
 
+
 /* FORMULÁRIO */
 
 form {
@@ -102,9 +103,4 @@ button {
 
 button:hover {
   background: #1D4ED8;
-}
-
-audio,
-video {
-  max-width: 100%;
 }
