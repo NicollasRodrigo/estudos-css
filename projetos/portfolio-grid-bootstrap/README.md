@@ -21,7 +21,7 @@ Portfólio responsivo desenvolvido para praticar HTML, CSS, JavaScript e Bootstr
 
 ## Estrutura
 
-\`\`\`text
+```text
 portfolio-grid-bootstrap/
 ├── index.html
 └── assets/
@@ -31,11 +31,11 @@ portfolio-grid-bootstrap/
     │   └── foto-perfil.jpg
     └── js/
         └── index.js
-\`\`\`
+```
 
 ## Como executar
 
-Abra o arquivo \`index.html\` no navegador. O projeto carrega Bootstrap e Font Awesome por CDN, então a conexão com a internet é necessária para esses recursos externos.
+Abra o arquivo `index.html` no navegador. O projeto carrega Bootstrap e Font Awesome por CDN, então a conexão com a internet é necessária para esses recursos externos.
 
 **Observação:** o formulário de contato está presente na interface, mas ainda não está conectado a um serviço para enviar mensagens.
 
