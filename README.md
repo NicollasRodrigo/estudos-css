@@ -1,13 +1,18 @@
-# <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" width="35" align="center"> CSS
+# CSS
 
-Repositório dedicado aos meus estudos de CSS, com conteúdos organizados para aprendizado e prática.
+Repositório dedicado aos meus estudos de CSS, com atividades de estilização e projetos práticos.
 
 ## Conteúdo
 
-- [Aulas](./aulas/) — conteúdos e atividades de CSS.
-- [Exercícios](./exercicios/) — exercícios para prática.
-- [Projetos](./projetos/) — projetos desenvolvidos durante os estudos.
+- [Aulas](./aulas/) — conteúdos e exemplos de CSS.
+- [Exercícios](./exercicios/) — espaço para exercícios práticos.
+- [Projetos](./projetos/) — projetos que aplicam estilos e layouts.
+
+## Projetos
+
+- [Portfólio Grid com Bootstrap](./projetos/portfolio-grid-bootstrap/) — projeto com HTML, CSS, JavaScript e Bootstrap, organizado em pastas de estilos, imagens e scripts.
+- [Currículo Web](https://github.com/NicollasRodrigo/estudos-html/tree/main/projetos/curriculo-web) — projeto complementar de HTML, CSS e JavaScript, mantido no repositório de HTML para evitar duplicação de arquivos.
 
 ---
 
-[Voltar](https://github.com/NicollasRodrigo/NicollasRodrigo)
+[Voltar ao perfil](https://github.com/NicollasRodrigo/NicollasRodrigo)
