@@ -37,6 +37,6 @@ portfolio-grid-bootstrap/
 
 Abra o arquivo `index.html` no navegador. O projeto carrega Bootstrap e Font Awesome por CDN, então a conexão com a internet é necessária para esses recursos externos.
 
-**Observação:** o formulário de contato está presente na interface, mas ainda não está conectado a um serviço para enviar mensagens.
+**Formulário de contato:** conectado ao FormSubmit para encaminhar mensagens para `nicollas.damatta@gmail.com`. Na primeira utilização, confirme o endereço pelo e-mail de ativação enviado pelo FormSubmit. Depois, faça um teste e confira também a pasta de spam.
 
 [Voltar para estudos-css](https://github.com/NicollasRodrigo/estudos-css)
