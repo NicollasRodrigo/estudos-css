@@ -35,8 +35,12 @@ portfolio-grid-bootstrap/
 
 ## Como executar
 
-Abra o arquivo `index.html` no navegador. O projeto carrega Bootstrap e Font Awesome por CDN, então a conexão com a internet é necessária para esses recursos externos.
+1. Abra a pasta `portfolio-grid-bootstrap` no VS Code.
+2. Inicie a página com uma extensão de servidor local, como Live Server. Não abra o HTML diretamente por duplo clique, pois o FormSubmit pode recusar formulários abertos como arquivos locais.
+3. Mantenha a conexão com a internet para carregar Bootstrap e Font Awesome pelas CDNs.
 
-**Formulário de contato:** conectado ao FormSubmit para encaminhar mensagens para `nicollas.damatta@gmail.com`. Na primeira utilização, confirme o endereço pelo e-mail de ativação enviado pelo FormSubmit. Depois, faça um teste e confira também a pasta de spam.
+## Formulário de contato
+
+O formulário usa o FormSubmit para encaminhar mensagens para `nicollas.damatta@gmail.com`. Na primeira utilização, envie um teste e confirme o endereço pelo e-mail de ativação do FormSubmit. Depois da confirmação, faça outro teste e confira também as pastas Spam e Todas as mensagens do Gmail.
 
 [Voltar para estudos-css](https://github.com/NicollasRodrigo/estudos-css)
