@@ -204,7 +204,16 @@
 
           <h3 class="h5 mt-5 mb-3">Ou envie uma mensagem</h3>
           <div class="contact-form">
-            <form class="row g-3 text-start" aria-label="Formulário de contato">
+            <form
+              class="row g-3 text-start"
+              aria-label="Formulário de contato"
+              action="https://formsubmit.co/nicollas.damatta@gmail.com"
+              method="POST"
+              accept-charset="UTF-8">
+              <input type="hidden" name="_subject" value="Nova mensagem pelo portfólio">
+              <input type="hidden" name="_template" value="table">
+              <!-- Campo auxiliar contra envios automáticos de spam -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
               <div class="col-12 col-md-6">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="nome" name="nome" autocomplete="name" required>
