@@ -114,6 +114,27 @@ if (anoAtual) {
   anoAtual.textContent = new Date().getFullYear();
 }
 
+/* Exibe notificações Toastify; mantém a mensagem acessível no formulário. */
+function notificarToast(mensagem, tipo) {
+  if (typeof window.Toastify !== "function") return;
+
+  const cor = tipo === "sucesso" ? "#4a5f48" : "#9b2c2c";
+
+  window.Toastify({
+    text: mensagem,
+    duration: 4000,
+    gravity: "top",
+    position: "right",
+    close: true,
+    stopOnFocus: true,
+    style: {
+      background: cor,
+      color: "#ffffff"
+    },
+    ariaLive: "polite"
+  }).showToast();
+}
+
 /* Formulário de contato: envio exclusivo pelo EmailJS */
 const formularioContato = document.querySelector("#contact_form");
 const statusFormulario = document.querySelector("#form-status");
@@ -144,18 +165,16 @@ if (
     }
 
     if (window.location.protocol === "file:") {
-      mostrarStatus(
-        "Abra o portfólio pelo Live Server ou pelo site publicado para enviar a mensagem.",
-        "text-danger"
-      );
+      const mensagem = "Abra o portfólio pelo Live Server ou pelo site publicado para enviar a mensagem.";
+      mostrarStatus(mensagem, "text-danger");
+      notificarToast(mensagem, "erro");
       return;
     }
 
     if (!window.emailjs || typeof window.emailjs.sendForm !== "function") {
-      mostrarStatus(
-        "O serviço de e-mail não carregou. Atualize a página e tente novamente.",
-        "text-danger"
-      );
+      const mensagem = "O serviço de e-mail não carregou. Atualize a página e tente novamente.";
+      mostrarStatus(mensagem, "text-danger");
+      notificarToast(mensagem, "erro");
       return;
     }
 
@@ -173,17 +192,15 @@ if (
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
 
-      mostrarStatus(
-        "Mensagem enviada com sucesso! Obrigado pelo contato.",
-        "text-success"
-      );
+      const mensagem = "Mensagem enviada com sucesso! Obrigado pelo contato.";
+      mostrarStatus(mensagem, "text-success");
+      notificarToast(mensagem, "sucesso");
       formularioContato.reset();
     } catch (erro) {
       console.error("Erro ao enviar pelo EmailJS:", erro);
-      mostrarStatus(
-        "Não foi possível enviar a mensagem. Confira a configuração do EmailJS e tente novamente.",
-        "text-danger"
-      );
+      const mensagem = "Não foi possível enviar a mensagem. Confira a configuração do EmailJS e tente novamente.";
+      mostrarStatus(mensagem, "text-danger");
+      notificarToast(mensagem, "erro");
     } finally {
       botaoEnviar.disabled = false;
       botaoEnviar.textContent = textoOriginal;
