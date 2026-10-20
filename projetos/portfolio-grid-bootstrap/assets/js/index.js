@@ -39,9 +39,21 @@ botaoTema.addEventListener("click", () => {
 
 // Envia o formulário sem sair da página e informa o resultado.
 const formularioContato = document.querySelector("#form-contato");
-const statusContato = document.querySelector("#form-status");
 
-if (formularioContato && statusContato) {
+if (formularioContato) {
+  let statusContato = document.querySelector("#form-status");
+
+  // Cria a área de status caso o HTML ainda não a tenha.
+  if (!statusContato) {
+    statusContato = document.createElement("p");
+    statusContato.id = "form-status";
+    statusContato.className = "col-12 mb-0";
+    statusContato.setAttribute("role", "status");
+    statusContato.setAttribute("aria-live", "polite");
+    statusContato.hidden = true;
+    formularioContato.append(statusContato);
+  }
+
   formularioContato.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
@@ -94,4 +106,3 @@ if (formularioContato && statusContato) {
     }
   });
 }
-
