@@ -126,7 +126,7 @@ function notificarToast(mensagem, tipo) {
     close: true,
     stopOnFocus: true,
     style: {
-      background: tipo === "sucesso" ? "#4a5f48" : "#dc3545",
+      background: tipo === "sucesso" ? "#536D5D" : "#A84343",
       color: "#f4f4f4"
     },
     ariaLive: "polite"
