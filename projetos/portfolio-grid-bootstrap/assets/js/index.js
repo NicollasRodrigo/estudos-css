@@ -114,41 +114,42 @@ if (anoAtual) {
   anoAtual.textContent = new Date().getFullYear();
 }
 
-/* Exibe notificações Toastify; mantém a mensagem acessível no formulário. */
+/* Exibe notificações Toastify e mantém uma mensagem acessível no formulário. */
 function notificarToast(mensagem, tipo) {
   if (typeof window.Toastify !== "function") return;
 
-  const cor = tipo === "sucesso" ? "#4a5f48" : "#9b2c2c";
-
   window.Toastify({
     text: mensagem,
-    duration: 4000,
+    duration: 3000,
     gravity: "top",
     position: "right",
     close: true,
     stopOnFocus: true,
     style: {
-      background: cor,
-      color: "#ffffff"
+      background: tipo === "sucesso" ? "#4a5f48" : "#dc3545",
+      color: "#f4f4f4"
     },
     ariaLive: "polite"
   }).showToast();
 }
 
-/* Formulário de contato: envio exclusivo pelo EmailJS */
-const formularioContato = document.querySelector("#contact_form");
-const statusFormulario = document.querySelector("#form-status");
-const botaoEnviar = document.querySelector("#submit_button");
+/* Formulário de contato: integração exclusiva com EmailJS */
+const formularioContato = document.getElementById("contact_form");
+const statusFormulario = document.getElementById("form-status");
+const botaoEnviar = document.getElementById("submit_button");
 
 const EMAILJS_PUBLIC_KEY = "xuqfuJD96XBS20xR4";
 const EMAILJS_SERVICE_ID = "service_6o89pdh";
 const EMAILJS_TEMPLATE_ID = "template_asdnznc";
 
-if (
-  formularioContato &&
-  statusFormulario &&
-  botaoEnviar
-) {
+/* Inicializa o SDK conforme a API da versão 5 do EmailJS. */
+if (window.emailjs && typeof window.emailjs.init === "function") {
+  window.emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY
+  });
+}
+
+if (formularioContato && statusFormulario && botaoEnviar) {
   function mostrarStatus(mensagem, tipo) {
     statusFormulario.hidden = false;
     statusFormulario.classList.remove("text-success", "text-danger");
@@ -156,7 +157,7 @@ if (
     statusFormulario.textContent = mensagem;
   }
 
-  formularioContato.addEventListener("submit", async (evento) => {
+  formularioContato.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
     if (!formularioContato.checkValidity()) {
@@ -171,39 +172,48 @@ if (
       return;
     }
 
-    if (!window.emailjs || typeof window.emailjs.sendForm !== "function") {
-      const mensagem = "O serviço de e-mail não carregou. Atualize a página e tente novamente.";
+    if (!window.emailjs || typeof window.emailjs.send !== "function") {
+      const mensagem = "O EmailJS não carregou. Atualize a página e tente novamente.";
       mostrarStatus(mensagem, "text-danger");
       notificarToast(mensagem, "erro");
       return;
     }
 
-    const textoOriginal = botaoEnviar.textContent;
+    /* Os nomes das propriedades devem corresponder às variáveis do template EmailJS. */
+    const formData = {
+      name: document.getElementById("nome").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      subject: document.getElementById("subject").value.trim(),
+      message: document.getElementById("mensagem").value.trim()
+    };
+
+    const textoBotaoOriginal = botaoEnviar.textContent;
+
     botaoEnviar.disabled = true;
     botaoEnviar.textContent = "Enviando...";
     statusFormulario.hidden = true;
     statusFormulario.textContent = "";
 
-    try {
-      await window.emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formularioContato,
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+    window.emailjs
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
+      .then(() => {
+        const mensagem = "E-mail enviado com sucesso!";
+        mostrarStatus(mensagem, "text-success");
+        notificarToast(mensagem, "sucesso");
 
-      const mensagem = "Mensagem enviada com sucesso! Obrigado pelo contato.";
-      mostrarStatus(mensagem, "text-success");
-      notificarToast(mensagem, "sucesso");
-      formularioContato.reset();
-    } catch (erro) {
-      console.error("Erro ao enviar pelo EmailJS:", erro);
-      const mensagem = "Não foi possível enviar a mensagem. Confira a configuração do EmailJS e tente novamente.";
-      mostrarStatus(mensagem, "text-danger");
-      notificarToast(mensagem, "erro");
-    } finally {
-      botaoEnviar.disabled = false;
-      botaoEnviar.textContent = textoOriginal;
-    }
+        /* Limpa os campos apenas depois que o EmailJS confirma o envio. */
+        formularioContato.reset();
+      })
+      .catch((erro) => {
+        console.error("Erro ao enviar o formulário pelo EmailJS:", erro);
+
+        const mensagem = "Erro ao enviar o e-mail. Confira a configuração do EmailJS e tente novamente.";
+        mostrarStatus(mensagem, "text-danger");
+        notificarToast(mensagem, "erro");
+      })
+      .finally(() => {
+        botaoEnviar.disabled = false;
+        botaoEnviar.textContent = textoBotaoOriginal;
+      });
   });
 }
