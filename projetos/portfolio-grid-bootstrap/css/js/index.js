@@ -165,13 +165,6 @@ if (formularioContato && statusFormulario && botaoEnviar) {
       return;
     }
 
-    if (window.location.protocol === "file:") {
-      const mensagem = "Abra o portfólio pelo Live Server ou pelo site publicado para enviar a mensagem.";
-      mostrarStatus(mensagem, "text-danger");
-      notificarToast(mensagem, "erro");
-      return;
-    }
-
     if (!window.emailjs || typeof window.emailjs.send !== "function") {
       const mensagem = "O EmailJS não carregou. Atualize a página e tente novamente.";
       mostrarStatus(mensagem, "text-danger");
@@ -207,7 +200,10 @@ if (formularioContato && statusFormulario && botaoEnviar) {
       .catch((erro) => {
         console.error("Erro ao enviar o formulário pelo EmailJS:", erro);
 
-        const mensagem = "Erro ao enviar o e-mail. Confira a configuração do EmailJS e tente novamente.";
+        const abriuComoArquivoLocal = window.location.protocol === "file:";
+        const mensagem = abriuComoArquivoLocal
+          ? "O navegador não permitiu o envio a partir de um arquivo local. Abra o index.html pelo Live Server ou pelo site publicado e tente novamente."
+          : "Erro ao enviar o e-mail. Confira o serviço, o template e as variáveis no painel do EmailJS e tente novamente.";
         mostrarStatus(mensagem, "text-danger");
         notificarToast(mensagem, "erro");
       })
