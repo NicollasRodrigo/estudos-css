@@ -1,12 +1,31 @@
 /* Configurações gerais */
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   font-family: Arial, sans-serif;
   background-color: #f7f6ef;
   color: #212529;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
 }
 
 /* Tema escuro, ativado pelo atributo data-theme no elemento html */
@@ -198,6 +217,19 @@ header[id] {
 @media (max-width: 767.98px) {
   .inicio {
     padding: 3.5rem 0.75rem;
+  }
+
+  .inicio .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .inicio h1 {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .inicio .lead {
+    font-size: 1.1rem;
   }
 }
 
