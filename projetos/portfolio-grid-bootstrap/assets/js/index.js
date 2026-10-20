@@ -1,106 +1,190 @@
+/* Efeito de entrada ao rolar a página */
 const elementos = document.querySelectorAll("[data-reveal]");
+const prefereMovimentoReduzido = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
 
-elementos.forEach((elemento) => {
-  elemento.classList.add("is-hidden");
-});
+if (prefereMovimentoReduzido || !("IntersectionObserver" in window)) {
+  elementos.forEach((elemento) => {
+    elemento.classList.add("is-visible");
+  });
+} else {
+  elementos.forEach((elemento) => {
+    elemento.classList.add("is-hidden");
+  });
 
-const observador = new IntersectionObserver((entradas) => {
-  entradas.forEach((entrada) => {
-    if (entrada.isIntersecting) {
-      entrada.target.classList.remove("is-hidden");
-      entrada.target.classList.add("is-visible");
-      observador.unobserve(entrada.target);
+  const observador = new IntersectionObserver(
+    (entradas, observadorAtual) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.remove("is-hidden");
+          entrada.target.classList.add("is-visible");
+          observadorAtual.unobserve(entrada.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  elementos.forEach((elemento) => observador.observe(elemento));
+}
+
+/* Alternância entre tema claro e escuro */
+const botaoTema = document.querySelector("#botao-tema");
+const iconeTema = botaoTema?.querySelector("i");
+const elementoRaiz = document.documentElement;
+
+function lerTemaSalvo() {
+  try {
+    return localStorage.getItem("tema-portfolio");
+  } catch (erro) {
+    return null;
+  }
+}
+
+function salvarTema(tema) {
+  try {
+    localStorage.setItem("tema-portfolio", tema);
+  } catch (erro) {
+    // O botão continua funcionando se o armazenamento estiver bloqueado.
+  }
+}
+
+function atualizarBotaoTema() {
+  if (!botaoTema) return;
+
+  const temaEscuroAtivo = elementoRaiz.getAttribute("data-theme") === "dark";
+  const proximoTema = temaEscuroAtivo ? "claro" : "escuro";
+
+  botaoTema.setAttribute("aria-pressed", String(temaEscuroAtivo));
+  botaoTema.setAttribute("aria-label", `Ativar tema ${proximoTema}`);
+  botaoTema.setAttribute("title", `Ativar tema ${proximoTema}`);
+
+  if (iconeTema) {
+    iconeTema.classList.toggle("fa-sun", temaEscuroAtivo);
+    iconeTema.classList.toggle("fa-moon", !temaEscuroAtivo);
+  }
+}
+
+const temaSalvo = lerTemaSalvo();
+
+if (temaSalvo === "dark") {
+  elementoRaiz.setAttribute("data-theme", "dark");
+} else if (temaSalvo === "light") {
+  elementoRaiz.removeAttribute("data-theme");
+}
+
+atualizarBotaoTema();
+
+if (botaoTema) {
+  botaoTema.addEventListener("click", () => {
+    const temaEscuroAtivo = elementoRaiz.getAttribute("data-theme") === "dark";
+
+    if (temaEscuroAtivo) {
+      elementoRaiz.removeAttribute("data-theme");
+      salvarTema("light");
+    } else {
+      elementoRaiz.setAttribute("data-theme", "dark");
+      salvarTema("dark");
+    }
+
+    atualizarBotaoTema();
+  });
+}
+
+/* Fecha o menu lateral em telas pequenas depois de selecionar um link */
+const menu = document.querySelector("#menu");
+const linksMenu = document.querySelectorAll("#menu .nav-link");
+
+linksMenu.forEach((link) => {
+  link.addEventListener("click", () => {
+    const telaPequena = window.matchMedia("(max-width: 1199.98px)").matches;
+    const offcanvas = window.bootstrap?.Offcanvas;
+
+    if (telaPequena && menu && offcanvas) {
+      offcanvas.getInstance(menu)?.hide();
     }
   });
 });
 
-elementos.forEach((elemento) => {
-  observador.observe(elemento);
-});
+/* Atualiza automaticamente o ano do rodapé */
+const anoAtual = document.querySelector("#ano-atual");
 
-const botaoTema = document.querySelector("#botao-tema");
+if (anoAtual) {
+  anoAtual.textContent = new Date().getFullYear();
+}
 
-botaoTema.addEventListener("click", () => {
-  const temaEscuroAtivo =
-    document.documentElement.getAttribute("data-theme") === "dark";
+/* Formulário de contato: envio exclusivo pelo EmailJS */
+const formularioContato = document.querySelector("#contact_form");
+const statusFormulario = document.querySelector("#form-status");
+const botaoEnviar = document.querySelector("#submit_button");
 
-  if (temaEscuroAtivo) {
-    document.documentElement.removeAttribute("data-theme");
-    botaoTema.setAttribute("aria-pressed", "false");
-    botaoTema.setAttribute("aria-label", "Ativar tema escuro");
-    botaoTema.setAttribute("title", "Ativar tema escuro");
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-    botaoTema.setAttribute("aria-pressed", "true");
-    botaoTema.setAttribute("aria-label", "Ativar tema claro");
-    botaoTema.setAttribute("title", "Ativar tema claro");
-  }
-});
+const EMAILJS_PUBLIC_KEY = "xuqfuJD96XBS20xR4";
+const EMAILJS_SERVICE_ID = "service_6o89pdh";
+const EMAILJS_TEMPLATE_ID = "template_asdnznc";
 
-// Envia o formulário sem sair da página e informa o resultado.
-const formularioContato = document.querySelector("#form-contato");
-
-if (formularioContato) {
-  let statusContato = document.querySelector("#form-status");
-
-  // Cria a área de status caso o HTML ainda não a tenha.
-  if (!statusContato) {
-    statusContato = document.createElement("p");
-    statusContato.id = "form-status";
-    statusContato.className = "col-12 mb-0";
-    statusContato.setAttribute("role", "status");
-    statusContato.setAttribute("aria-live", "polite");
-    statusContato.hidden = true;
-    formularioContato.append(statusContato);
+if (
+  formularioContato &&
+  statusFormulario &&
+  botaoEnviar
+) {
+  function mostrarStatus(mensagem, tipo) {
+    statusFormulario.hidden = false;
+    statusFormulario.classList.remove("text-success", "text-danger");
+    statusFormulario.classList.add(tipo);
+    statusFormulario.textContent = mensagem;
   }
 
   formularioContato.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
-    const botaoEnviar = formularioContato.querySelector('button[type="submit"]');
-    const textoOriginal = botaoEnviar.textContent;
+    if (!formularioContato.checkValidity()) {
+      formularioContato.reportValidity();
+      return;
+    }
 
+    if (window.location.protocol === "file:") {
+      mostrarStatus(
+        "Abra o portfólio pelo Live Server ou pelo site publicado para enviar a mensagem.",
+        "text-danger"
+      );
+      return;
+    }
+
+    if (!window.emailjs || typeof window.emailjs.sendForm !== "function") {
+      mostrarStatus(
+        "O serviço de e-mail não carregou. Atualize a página e tente novamente.",
+        "text-danger"
+      );
+      return;
+    }
+
+    const textoOriginal = botaoEnviar.textContent;
     botaoEnviar.disabled = true;
     botaoEnviar.textContent = "Enviando...";
-    statusContato.hidden = true;
-    statusContato.textContent = "";
+    statusFormulario.hidden = true;
+    statusFormulario.textContent = "";
 
     try {
-      const endpointAjax = formularioContato.action.replace(
-        "https://formsubmit.co/",
-        "https://formsubmit.co/ajax/"
+      await window.emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formularioContato,
+        { publicKey: EMAILJS_PUBLIC_KEY }
       );
 
-      const resposta = await fetch(endpointAjax, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(
-          Object.fromEntries(new FormData(formularioContato).entries())
-        )
-      });
-
-      const resultado = await resposta.json();
-
-      if (
-        !resposta.ok ||
-        resultado.success === false ||
-        resultado.success === "false"
-      ) {
-        throw new Error("O serviço não confirmou o envio.");
-      }
-
-      statusContato.className = "col-12 mb-0 text-success";
-      statusContato.textContent = "Mensagem enviada! Obrigado pelo contato.";
+      mostrarStatus(
+        "Mensagem enviada com sucesso! Obrigado pelo contato.",
+        "text-success"
+      );
       formularioContato.reset();
     } catch (erro) {
-      statusContato.className = "col-12 mb-0 text-danger";
-      statusContato.textContent =
-        "Não foi possível confirmar o envio. Verifique sua conexão e tente novamente.";
+      console.error("Erro ao enviar pelo EmailJS:", erro);
+      mostrarStatus(
+        "Não foi possível enviar a mensagem. Confira a configuração do EmailJS e tente novamente.",
+        "text-danger"
+      );
     } finally {
-      statusContato.hidden = false;
       botaoEnviar.disabled = false;
       botaoEnviar.textContent = textoOriginal;
     }
