@@ -36,3 +36,62 @@ botaoTema.addEventListener("click", () => {
     botaoTema.setAttribute("title", "Ativar tema claro");
   }
 });
+
+// Envia o formulário sem sair da página e informa o resultado.
+const formularioContato = document.querySelector("#form-contato");
+const statusContato = document.querySelector("#form-status");
+
+if (formularioContato && statusContato) {
+  formularioContato.addEventListener("submit", async (evento) => {
+    evento.preventDefault();
+
+    const botaoEnviar = formularioContato.querySelector('button[type="submit"]');
+    const textoOriginal = botaoEnviar.textContent;
+
+    botaoEnviar.disabled = true;
+    botaoEnviar.textContent = "Enviando...";
+    statusContato.hidden = true;
+    statusContato.textContent = "";
+
+    try {
+      const endpointAjax = formularioContato.action.replace(
+        "https://formsubmit.co/",
+        "https://formsubmit.co/ajax/"
+      );
+
+      const resposta = await fetch(endpointAjax, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(
+          Object.fromEntries(new FormData(formularioContato).entries())
+        )
+      });
+
+      const resultado = await resposta.json();
+
+      if (
+        !resposta.ok ||
+        resultado.success === false ||
+        resultado.success === "false"
+      ) {
+        throw new Error("O serviço não confirmou o envio.");
+      }
+
+      statusContato.className = "col-12 mb-0 text-success";
+      statusContato.textContent = "Mensagem enviada! Obrigado pelo contato.";
+      formularioContato.reset();
+    } catch (erro) {
+      statusContato.className = "col-12 mb-0 text-danger";
+      statusContato.textContent =
+        "Não foi possível confirmar o envio. Verifique sua conexão e tente novamente.";
+    } finally {
+      statusContato.hidden = false;
+      botaoEnviar.disabled = false;
+      botaoEnviar.textContent = textoOriginal;
+    }
+  });
+}
+
