@@ -186,13 +186,15 @@ header[id] {
 
 .card {
   height: 100%;
-  border: none;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s;
+  color: #303831;
+  background-color: #FCFCF8;
+  border: 1px solid rgba(83, 109, 93, 0.08);
+  box-shadow: 0 3px 12px rgba(35, 49, 40, 0.06);
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .card-title {
