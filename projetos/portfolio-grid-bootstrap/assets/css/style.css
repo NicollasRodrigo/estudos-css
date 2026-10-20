@@ -102,6 +102,9 @@ html[data-theme="dark"] footer {
 
 .foto-perfil {
   width: 150px;
+  height: 150px;
+  max-width: 100%;
+  object-fit: cover;
   border: 2px solid #c6b68d;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -129,6 +132,14 @@ html[data-theme="dark"] footer {
 }
 
 /* Campos do formulário */
+.contact-form .form-label {
+  font-weight: 600;
+}
+
+.contact-form #form-status {
+  min-height: 1.25rem;
+}
+
 .contact-form {
   padding: 1.5rem;
   background-color: #fff;
