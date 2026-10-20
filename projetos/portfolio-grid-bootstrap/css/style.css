@@ -10,8 +10,8 @@ body {
   max-width: 100%;
   overflow-x: clip;
   font-family: Arial, sans-serif;
-  background-color: #f7f6ef;
-  color: #212529;
+  background-color: #F6F6F1;
+  color: #303831;
 }
 
 img,
@@ -30,47 +30,47 @@ h3 {
 
 /* Tema escuro, ativado pelo atributo data-theme no elemento html */
 html[data-theme="dark"] body {
-  background-color: #202720;
-  color: #e8ece4;
+  background-color: #202923;
+  color: #E7ECE6;
 }
 
 html[data-theme="dark"] .inicio {
-  background-color: #29332a;
+  background-color: #2D3A31;
 }
 
 html[data-theme="dark"] .inicio h1,
 html[data-theme="dark"] .card-title {
-  color: #bfd0b1;
+  color: #CFD8CC;
 }
 
 html[data-theme="dark"] #projetos.bg-light {
-  background-color: #252d26 !important;
+  background-color: #27332B !important;
 }
 
 html[data-theme="dark"] .text-secondary {
-  color: #c0c8bf !important;
+  color: #C5CEC5 !important;
 }
 
 html[data-theme="dark"] .card,
 html[data-theme="dark"] .contact-form {
-  background-color: #2c352d;
-  color: #e8ece4;
+  background-color: #2A352D;
+  color: #E7ECE6;
   border: 1px solid rgba(198, 214, 190, 0.14);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
 }
 
 html[data-theme="dark"] .contact-form .form-control {
-  background-color: #202720;
-  color: #e8ece4;
-  border-color: #596b59;
+  background-color: #202923;
+  color: #E7ECE6;
+  border-color: #5B6B60;
 }
 
 html[data-theme="dark"] .contact-form .form-control::placeholder {
-  color: #c0c8bf;
+  color: #C5CEC5;
 }
 
 html[data-theme="dark"] footer {
-  background-color: #171d18;
+  background-color: #19221D;
 }
 
 .theme-toggle {
@@ -88,13 +88,13 @@ html[data-theme="dark"] footer {
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-brand:hover {
-  color: #c6b68d;
+  color: #C8B992;
 }
 
 .navbar-dark .navbar-nav .nav-link:focus-visible,
 .navbar-dark .navbar-brand:focus-visible {
-  color: #c6b68d;
-  outline: 2px solid #c6b68d;
+  color: #C8B992;
+  outline: 2px solid #C8B992;
   outline-offset: 3px;
 }
 
@@ -110,12 +110,12 @@ html[data-theme="dark"] footer {
 
 /* Apresentação */
 .inicio {
-  background-color: #f0f1e7;
+  background-color: #E9EFE8;
   padding: 90px 20px;
 }
 
 .inicio h1 {
-  color: #4a5f48;
+  color: #536D5D;
   font-weight: bold;
 }
 
@@ -124,30 +124,30 @@ html[data-theme="dark"] footer {
   height: 150px;
   max-width: 100%;
   object-fit: cover;
-  border: 2px solid #c6b68d;
+  border: 2px solid #C8B992;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Botões */
 .btn-primary {
-  background-color: #4a5f48;
-  border-color: #4a5f48;
+  background-color: #536D5D;
+  border-color: #536D5D;
 }
 
 .btn-primary:hover {
-  background-color: #354638;
-  border-color: #354638;
+  background-color: #405648;
+  border-color: #405648;
 }
 
 .btn-primary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(74, 95, 72, 0.4);
+  box-shadow: 0 0 0 0.25rem rgba(83, 109, 93, 0.34);
 }
 
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #354638;
-  border-color: #354638;
+  background-color: #405648;
+  border-color: #405648;
 }
 
 /* Campos do formulário */
@@ -161,15 +161,15 @@ html[data-theme="dark"] footer {
 
 .contact-form {
   padding: 1.5rem;
-  background-color: #fff;
-  border: 1px solid rgba(74, 95, 72, 0.12);
+  background-color: #FCFCF8;
+  border: 1px solid rgba(83, 109, 93, 0.14);
   border-radius: 0.75rem;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
 .form-control:focus {
-  border-color: #4a5f48;
-  box-shadow: 0 0 0 0.25rem rgba(74, 95, 72, 0.2);
+  border-color: #536D5D;
+  box-shadow: 0 0 0 0.25rem rgba(83, 109, 93, 0.2);
 }
 
 @media (max-width: 575.98px) {
@@ -196,7 +196,7 @@ header[id] {
 }
 
 .card-title {
-  color: #4a5f48;
+  color: #536D5D;
 }
 
 /* Efeito de entrada ativado pelo JavaScript */
@@ -235,7 +235,7 @@ header[id] {
 
 /* Rodapé */
 footer {
-  background-color: #212529;
+  background-color: #303831;
   color: white;
 }
 
@@ -259,5 +259,64 @@ footer {
 
   [data-reveal].is-hidden {
     opacity: 1;
+  }
+}
+
+/* Paleta calma: verde-sálvia, marfim e areia */
+.navbar.navbar-dark.bg-dark {
+  background-color: #27362E !important;
+}
+
+#menu.offcanvas-xl {
+  --bs-bg-opacity: 1;
+  background-color: #27362E !important;
+}
+
+#projetos.bg-light {
+  background-color: #EEF1EB !important;
+}
+
+html[data-theme="dark"] #projetos.bg-light {
+  background-color: #27332B !important;
+}
+
+html[data-theme="dark"] .navbar.navbar-dark.bg-dark,
+html[data-theme="dark"] #menu.offcanvas-xl {
+  background-color: #19241E !important;
+}
+
+html[data-theme="dark"] .inicio h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] #contato h3 {
+  color: #D5DED4;
+}
+
+html[data-theme="dark"] .card-text,
+html[data-theme="dark"] #sobre p,
+html[data-theme="dark"] #contato p {
+  color: #E0E5DF;
+}
+
+.form-control,
+.contact-form {
+  background-color: #FCFCF8;
+}
+
+.form-control {
+  color: #303831;
+}
+
+.form-control:focus-visible,
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid #C8B992;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .nav-link,
+  .navbar-brand {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   }
 }
