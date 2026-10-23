@@ -1,14 +1,14 @@
-# Estudos de CSS
+# 📚 Estudos de CSS | Nicollas Rodrigo
 
-Aqui organizo exercícios das aulas e projetos que faço enquanto estudo CSS. Alguns projetos também usam HTML, JavaScript e outras ferramentas de desenvolvimento web.
+Repositório para organizar as aulas, os exercícios e os projetos que faço enquanto estudo CSS e desenvolvimento de interfaces.
 
-## Conteúdo
+## 📂 Organização
 
-- [Aulas](./aulas/) — exemplos das aulas.
+- [Aulas](./aulas/) — exemplos e materiais das aulas.
 - [Exercícios](./exercicios/) — atividades para praticar.
 - [Projetos](./projetos/) — páginas e projetos que desenvolvi.
 
-## Projeto em destaque
+## 🚀 Projeto em destaque
 
 ### [Portfólio Grid com Bootstrap](./projetos/portfolio-grid-bootstrap/)
 
@@ -19,12 +19,13 @@ Projeto que desenvolvi para praticar layout responsivo, navegação, temas claro
 - [Ver os arquivos do projeto](./projetos/portfolio-grid-bootstrap/)
 - [Ver o README do projeto](./projetos/portfolio-grid-bootstrap/README.md)
 
-## Outro projeto
+## 👨‍💻 Sobre mim
 
-O [Currículo Web](https://github.com/NicollasRodrigo/estudos-html/tree/main/projetos/curriculo-web) está no meu repositório de HTML.
+Sou estudante de Análise e Desenvolvimento de Sistemas na UNIPÊ e uso esses repositórios para praticar programação e acompanhar meu aprendizado em desenvolvimento web.
 
-## Sobre mim
+## 🔗 Links
 
-Sou estudante de Análise e Desenvolvimento de Sistemas na UNIPÊ e uso este repositório para praticar e melhorar meus conhecimentos em desenvolvimento web.
-
-[Meu perfil no GitHub](https://github.com/NicollasRodrigo) · [Meu LinkedIn](https://www.linkedin.com/in/nicollas-rodrigo-251657423/)
+- [Meu perfil no GitHub](https://github.com/NicollasRodrigo)
+- [Meu LinkedIn](https://www.linkedin.com/in/nicollas-rodrigo-251657423/)
+- [Estudos de HTML](https://github.com/NicollasRodrigo/estudos-html)
+- [Estudos de Git e GitHub](https://github.com/NicollasRodrigo/estudos-git-github)
