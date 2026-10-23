@@ -1,30 +1,30 @@
-# 🎨 Estudos de CSS | Nicollas Rodrigo
+# Estudos de CSS
 
-Repositório de exercícios e projetos práticos de CSS e desenvolvimento de interfaces.
+Aqui organizo exercícios das aulas e projetos que faço enquanto estudo CSS. Alguns projetos também usam HTML, JavaScript e outras ferramentas de desenvolvimento web.
 
-## 📚 Conteúdo
+## Conteúdo
 
-- [Aulas](./aulas/) — exemplos e materiais de estudo.
-- [Exercícios](./exercicios/) — prática de estilização e layout.
-- [Projetos](./projetos/) — aplicações e páginas desenvolvidas.
+- [Aulas](./aulas/) — exemplos das aulas.
+- [Exercícios](./exercicios/) — atividades para praticar.
+- [Projetos](./projetos/) — páginas e projetos que desenvolvi.
 
-## 🚀 Projeto em destaque
+## Projeto em destaque
 
 ### [Portfólio Grid com Bootstrap](./projetos/portfolio-grid-bootstrap/)
 
-Portfólio responsivo com navegação adaptável, tema claro/escuro, cards de projetos e formulário de contato.
+Projeto que desenvolvi para praticar layout responsivo, navegação, temas claro e escuro e formulário de contato.
 
-**Tecnologias:** HTML5, CSS3, JavaScript, Bootstrap, Font Awesome, EmailJS e Toastify.
+**Tecnologias:** HTML, CSS, JavaScript, Bootstrap, Font Awesome, EmailJS e Toastify.
 
 - [Ver os arquivos do projeto](./projetos/portfolio-grid-bootstrap/)
-- [Ler o README do projeto](./projetos/portfolio-grid-bootstrap/README.md)
+- [Ver o README do projeto](./projetos/portfolio-grid-bootstrap/README.md)
 
-## 📄 Outro projeto
+## Outro projeto
 
-O [Currículo Web](https://github.com/NicollasRodrigo/estudos-html/tree/main/projetos/curriculo-web) fica no repositório de HTML, onde seus arquivos já estão organizados. Assim, evito manter cópias desnecessárias.
+O [Currículo Web](https://github.com/NicollasRodrigo/estudos-html/tree/main/projetos/curriculo-web) está no meu repositório de HTML.
 
-## 👨‍💻 Sobre
+## Sobre mim
 
-Sou estudante de Análise e Desenvolvimento de Sistemas na UNIPÊ e utilizo estes projetos para consolidar minha base em desenvolvimento web.
+Sou estudante de Análise e Desenvolvimento de Sistemas na UNIPÊ e uso este repositório para praticar e melhorar meus conhecimentos em desenvolvimento web.
 
-[Perfil no GitHub](https://github.com/NicollasRodrigo) · [LinkedIn](https://www.linkedin.com/in/nicollas-rodrigo-251657423/)
+[Meu perfil no GitHub](https://github.com/NicollasRodrigo) · [Meu LinkedIn](https://www.linkedin.com/in/nicollas-rodrigo-251657423/)
