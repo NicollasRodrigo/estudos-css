@@ -1,38 +1,30 @@
-# Estudos de CSS
+# 🎨 Estudos de CSS | Nicollas Rodrigo
 
-Repositório dedicado aos estudos de CSS, com exercícios e projetos práticos desenvolvidos durante o aprendizado de desenvolvimento web.
+Repositório de exercícios e projetos práticos de CSS e desenvolvimento de interfaces.
 
-## Conteúdo
+## 📚 Conteúdo
 
 - [Aulas](./aulas/) — exemplos e materiais de estudo.
-- [Exercícios](./exercicios/) — atividades práticas.
-- [Projetos](./projetos/) — aplicações e páginas desenvolvidas durante os estudos.
+- [Exercícios](./exercicios/) — prática de estilização e layout.
+- [Projetos](./projetos/) — aplicações e páginas desenvolvidas.
 
-## Projetos em destaque
+## 🚀 Projeto em destaque
 
-### Portfólio Grid com Bootstrap
+### [Portfólio Grid com Bootstrap](./projetos/portfolio-grid-bootstrap/)
 
-Projeto responsivo para praticar HTML, CSS, JavaScript e Bootstrap 5. Inclui navegação adaptável, alternância de tema, cards de projetos e formulário de contato.
+Portfólio responsivo com navegação adaptável, tema claro/escuro, cards de projetos e formulário de contato.
+
+**Tecnologias:** HTML5, CSS3, JavaScript, Bootstrap, Font Awesome, EmailJS e Toastify.
 
 - [Ver os arquivos do projeto](./projetos/portfolio-grid-bootstrap/)
 - [Ler o README do projeto](./projetos/portfolio-grid-bootstrap/README.md)
 
-### Currículo Web
+## 📄 Outro projeto
 
-Projeto de currículo com HTML, CSS e JavaScript, mantido no repositório de estudos de HTML para evitar duplicação dos mesmos arquivos.
+O [Currículo Web](https://github.com/NicollasRodrigo/estudos-html/tree/main/projetos/curriculo-web) fica no repositório de HTML, onde seus arquivos já estão organizados. Assim, evito manter cópias desnecessárias.
 
-- [Ver o Currículo Web](https://github.com/NicollasRodrigo/estudos-html/tree/main/projetos/curriculo-web)
+## 👨‍💻 Sobre
 
-## Tecnologias estudadas
+Sou estudante de Análise e Desenvolvimento de Sistemas na UNIPÊ e utilizo estes projetos para consolidar minha base em desenvolvimento web.
 
-CSS3, HTML5, JavaScript e Bootstrap. Os projetos podem utilizar bibliotecas adicionais, descritas em seus respectivos READMEs.
-
-## Como usar este repositório
-
-1. Abra a pasta do assunto ou projeto que deseja consultar.
-2. Leia o README específico, quando disponível.
-3. Siga as instruções de execução indicadas em cada projeto.
-
-## Autor
-
-Nicollas Rodrigo — [perfil no GitHub](https://github.com/NicollasRodrigo)
+[Perfil no GitHub](https://github.com/NicollasRodrigo) · [LinkedIn](https://www.linkedin.com/in/nicollas-rodrigo-251657423/)
