@@ -44,8 +44,7 @@ O envio pelo EmailJS foi testado e uma mensagem chegou ao Gmail. Para que o ende
 
 - [Perfil no GitHub](https://github.com/NicollasRodrigo)
 - [LinkedIn](https://www.linkedin.com/in/nicollas-rodrigo-251657423/)
-- [Versão principal em estudos-css](https://github.com/NicollasRodrigo/estudos-css/tree/main/projetos/portfolio-grid-bootstrap)
-- [Cópia da atividade de Git e GitHub](https://github.com/NicollasRodrigo/estudos-git-github/tree/main/projetos/portfolio-grid-bootstrap)
+- [Repositório estudos-css](https://github.com/NicollasRodrigo/estudos-css)
 
 ---
 
